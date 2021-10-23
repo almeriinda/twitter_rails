@@ -5,6 +5,10 @@ require "rails/all"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+if ['development', 'test', 'production', 'homolog'].include? ENV['RAILS_ENV']
+  Dotenv::Railtie.load
+end
+
 
 module TwitterRails
   class Application < Rails::Application
