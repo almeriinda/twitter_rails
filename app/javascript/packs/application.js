@@ -7,6 +7,27 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import 'bootstrap';
+import '../stylesheets/application'; // This file will contain your custom CSS
+import "@fortawesome/fontawesome-free/js/all";
+
+require('admin-lte');
+require("bootstrap")
+require("@rails/activestorage").start()
+require("channels")
+require("jquery")
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+    })
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+});
 
 Rails.start()
 Turbolinks.start()

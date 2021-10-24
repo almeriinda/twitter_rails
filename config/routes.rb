@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   resources :posts
-  #devise_for :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root to: "home#index"
-  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+  root to: "posts#index"
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks", :sessions => "sessions" }
+#  devise_scope :user do
+ #   get 'sign_in', to: 'devise/sessions#new'
+ #   get 'signout', to: 'devise/sessions#destroy', as: :signout
+ # end
+
 end
