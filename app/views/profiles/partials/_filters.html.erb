@@ -15,16 +15,19 @@
     <div class="row">
       <div class="col-md-12">
         <div class="form-group">
-          <%= form_for('/posts/index', method: :get) do |form| %>
+          <%= form_for('/profiles/index', method: :get) do |form| %>
             <div class="row">
               <div class="col-sm-6">
                 <div class="form-group">
-                  <%= text_field_tag :name, "", class:"form-control border border-primary", placeholder:"Procure por um amigo", name:"post[user_id]", value: '' %>
+                  <% value_form = params[:profile][:user_name] rescue "" %>
+                  <%= text_field_tag :name, "", class:"form-control border border-primary", placeholder:"Procure por um amigo", name:"profile[user_name]", value: value_form %>
                 </div>
               </div>
-            </div>
-            <div class="card-footer">
-              <button type="submit" class="btn btn-primary">Consultar</button>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary">Consultar</button>
+                </div>
+              </div>
             </div>
           <% end %>
         </div>

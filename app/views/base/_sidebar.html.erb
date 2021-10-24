@@ -14,7 +14,8 @@
               <img src="/assets/img/user2-160x160.png" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-              <%= link_to current_user.name, "", class:"d-block"%>
+              <%= name_user = current_user.name rescue "" %>
+              <%= link_to name_user, "", class:"d-block"%>
             </div>
         </div>
 
@@ -23,15 +24,15 @@
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
               <%= link_to posts_path, class:"nav-link" do %>
-                <%= fa_icon "nav-icon edit" %>
+                <%= fa_icon "nav-icon home" %>
                 <p>Página Inicial</p>
               <% end %>
             </li>
             <li class="nav-item">
-              <%#= link_to atendimentos_path, class:"nav-link" do %>
-                <%= fa_icon "nav-icon edit" %>
-                <p>Registro de Atendimento</p>
-              <%# end %>
+              <%= link_to profiles_index_path, class:"nav-link" do %>
+                <%= fa_icon "nav-icon search" %>
+                <p>Explorar</p>
+              <% end %>
             </li>
             <li class="nav-item">
               <%#= link_to dashboard_index_path, class:"nav-link" do %>

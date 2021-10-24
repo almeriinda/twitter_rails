@@ -4,6 +4,8 @@ module ApplicationHelper
         if controller.present?
             if controller == 'posts'
                 url = 'Página Inicial'
+            elsif controller == 'profiles'
+                url = 'Usuários'    
             end    
         end    
         url
