@@ -25,6 +25,8 @@ module ApplicationHelper
     end 
     
     def get_notifications_user(current_user)
-        count_follower = Follower.where(user_id: current_user.id).size
+        if current_user.present?
+            count_follower = Follower.where(user_id: current_user.id).size
+        end    
     end
 end
