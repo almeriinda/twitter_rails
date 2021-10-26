@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  post 'followers/create'
+  put 'followers/update'
   resources :posts
   get "profiles/index"
   root to: "posts#index"

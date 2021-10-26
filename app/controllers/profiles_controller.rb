@@ -5,7 +5,10 @@ class ProfilesController < ApplicationController
   def index
     @profiles = Profile.get_list(params)
     if @profiles.present?
-      @posts_user = Post.where(user_id: @profiles.map{|pr| pr.id}[0])
+      user_id = @profiles.map{|pr| pr.id}[0]
+      @posts_user = Post.where(user_id: user_id)
+      @followers_profile = Follower.where(user_id: user_id).size
+      @followers_users = Follower.where(follower_user_id: user_id).size
     end  
   end
 

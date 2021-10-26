@@ -11,11 +11,18 @@
         <p class="authorLink"><%= image_tag image_user, style: 'height:450px;width:600px;' %></p>
         </div>
     </div>
+    <% if profile.id != current_user.id %>
+        <div class="button_right">
+            <% @url_and_method = get_form_follower('followers', profile.id, current_user.id) %>
+            <%= form_with(method: @url_and_method[1], url: @url_and_method[0], local: true) do |form| %>
+                <%= hidden_field_tag :user_id, profile.id, name: "follower[user_id]" %>
+                <%= hidden_field_tag :follower_user_id, current_user.id, name: "follower[follower_user_id]" %>
+                <%= submit_tag "#{@url_and_method[2]}", class: "btn btn-primary" %>
+            <% end %>    
+        </div>
+    <% end %>    
+    Seguindo <%= @followers_users %>| Seguidores <%= @followers_profile %>
     <% end %>
-    <div class="button_right">
-        <%= submit_tag "Seguir", class: "btn btn-primary" %>
-    </div>
-    Seguindo | Seguidores
     <%= render "/profiles/partials/list_post_user" %>
 <% else %>
     <p class="authorName">Não houve resultados para sua busca.</p>
