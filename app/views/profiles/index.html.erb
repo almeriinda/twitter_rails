@@ -4,11 +4,13 @@
     <p id="notice"><%= notice %></p>
     <% @profiles.each do |profile| %>
     <div class="authorFooter">
-    <% image_user = profile.image.present? ? profile.image : '/assets/img/user2-160x160.png' %>
-        <%= image_tag image_user, style: 'height:73px;width:73px;' %>
+    <% image_user = profile.image.present? ? profile.image : '/assets/capa.png' %>
         <div class="authorInfo">
-        <p class="authorName"><%= profile.name %></p>
-        <p class="authorLink"><%= image_tag image_user, style: 'height:450px;width:600px;' %></p>
+        <p class="authorLink"><%= image_tag image_user, style: 'height:400px;width:850px;' %></p>
+        <div class="left01">
+         <%= image_tag '/assets/img/user2-160x160.png', style: 'height:73px;width:73px;' %>
+         <p class="authorName"><%= profile.name %></p>
+        </div>
         </div>
     </div>
     <% if profile.id != current_user.id %>
@@ -27,3 +29,16 @@
 <% else %>
     <p class="authorName">Não houve resultados para sua busca.</p>
 <% end %>
+
+<style>
+    .authorName {
+        font-weight: bold;
+    }
+    .left01 {
+        padding-left: 380px;
+        margin-bottom: 20px;
+    }
+    .authorInfo {
+         padding-left: 100px;
+    }
+</style>
