@@ -19,7 +19,7 @@
             <div class="row">
               <div class="col-sm-6">
                 <div class="form-group">
-                  <% value_form = params[:profile][:user_name] rescue "" %>
+                  <%= value_form = params[:profile][:user_name] rescue "" %>
                   <%= text_field_tag :name, "", class:"form-control border border-primary", placeholder:"Procure por um amigo", name:"profile[user_name]", value: value_form %>
                 </div>
               </div>
