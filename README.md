@@ -1,24 +1,20 @@
-# README
+# Instale o NVM e RVM
+# Iniciando o projeto em ambiente local
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+git clone https://github.com/almeriinda/twitter_rails.git
+# Instalando ruby, gems / instalando libs package / 
 
-Things you may want to cover:
+rvm install ruby-3.0.0
+rvm use 3.0.0
 
-* Ruby version
+cd twitter_rails
+bundle install
+yarn install
+bin/webpack
 
-* System dependencies
+# Configurando o banco da aplicação
 
-* Configuration
+cp .env.example .env
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Obs: a aplicação foi gerada no banco postgres
+Obs2: no arquivo .env, você deve colocar as credenciais e dados do banco de dados
