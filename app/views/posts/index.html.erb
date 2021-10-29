@@ -3,12 +3,15 @@
 <p id="notice"><%= notice %></p>
 <% @posts.each do |post| %>
   <div class="authorFooter">
-   <% image_user = get_image_user(post.user.image, 'img_user') %>
-   <% front_user = get_image_user(post.image, 'front_user') %>
-    <%= image_tag image_user, style: 'height:73px;width:73px;' %>
+   <% img_user = post.user.image rescue "" %>
+   <% front_cover = post.front_cover rescue "" %>
+
+   <% image_user = get_image_user(img_user, 'img_user') %>
+   <% front_user = get_image_user(front_cover, 'front_user') %>
+    <%= image_tag '/assets/img/user2-160x160.png', style: 'height:73px;width:73px;' %>
     <div class="authorInfo">
       <p class="authorName"><%= post.user.name %></p>
-      <p class="authorLink"><%= image_tag front_user, style: 'height:450px;width:600px;' %></p>
+      <p class="authorLink"><%= image_tag '/assets/img/user2-160x160.png', style: 'height:450px;width:600px;' %></p>
       <p class="authorBody"><%= post.information %></p>
     </div>
   </div>
