@@ -2,15 +2,15 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: 'postgres'
+  password: 'postgres'
+  host: 'localhost'
+  port: 5432
+  schema_search_path: 'twitter'
 
 development:
   <<: *default
-  username: <%= ENV['DATABASE_USERNAME'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
-  host: <%= ENV['DATABASE_HOST'] %>
-  port: <%= ENV['DATABASE_PORT'] %>
-  database: <%= ENV['DATABASE_DB'] %>
-  schema_search_path: <%= ENV['SCHEMA_DB'] %>
+  database: 'twitter_rails_development'
 
 test:
   <<: *default
@@ -19,5 +19,4 @@ test:
 production:
   <<: *default
   database: twitter_rails_production
-  username: twitter_rails
-  password: <%= ENV['TWITTER_RAILS_DATABASE_PASSWORD'] %>
+  
