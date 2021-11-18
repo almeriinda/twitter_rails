@@ -61,3 +61,4 @@ gem 'omniauth-facebook'
 gem 'dotenv-rails', groups: [:development, :test, :production]
 gem 'font_awesome5_rails'
 
+

@@ -6,7 +6,6 @@ default: &default
   password: 'postgres'
   host: 'localhost'
   port: 5432
-  schema_search_path: 'twitter'
 
 development:
   <<: *default
@@ -19,4 +18,3 @@ test:
 production:
   <<: *default
   database: twitter_rails_production
-  
