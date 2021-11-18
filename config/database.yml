@@ -2,10 +2,11 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: 'postgres'
-  password: 'postgres'
-  host: 'localhost'
+  username: 'ikrbqyizczdcch'
+  password: '939c78ceeb4f012648b6144576336e2efcce68b8d8400ef406db175b7deb8f8d'
+  host: 'ec2-52-0-93-3.compute-1.amazonaws.com'
   port: 5432
+  schema_search_path: 'twitter'
 
 development:
   <<: *default
@@ -17,4 +18,4 @@ test:
 
 production:
   <<: *default
-  database: twitter_rails_production
+  database: d4403a23ursu2e
