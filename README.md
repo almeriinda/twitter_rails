@@ -18,3 +18,6 @@ cp .env.example .env
 
 Obs: a aplicação foi gerada no banco postgres
 Obs2: no arquivo .env, você deve colocar as credenciais e dados do banco de dados
+
+# Disponível via Heroku
+- Link: https://aqueous-harbor-40535.herokuapp.com/users/sign_in
